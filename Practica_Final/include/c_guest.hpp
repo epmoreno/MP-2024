@@ -15,6 +15,7 @@ class Guest{
     public:
         Guest();
         Guest(std::string nombre, int ID, int numero_telefono, Genero genero);
+        Guest(const Guest &guest);
         ~Guest();
 
         std::string getNombre();

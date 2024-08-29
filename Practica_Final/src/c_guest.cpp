@@ -12,6 +12,12 @@ Guest::Guest(std::string nombre, int ID, int numero_telefono, Genero genero){
     this->numero_telefono = numero_telefono;
     this->genero = genero;
 };
+Guest::Guest(const Guest &guest){
+    this->nombre = guest.nombre;
+    this->ID = guest.ID;
+    this->numero_telefono = guest.numero_telefono;
+    this->genero = guest.genero;
+};
 
 std::string Guest::getNombre(){
     return this->nombre;

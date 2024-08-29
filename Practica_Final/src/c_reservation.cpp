@@ -21,10 +21,10 @@ Reservation::Reservation(Guest **guests, int num_guests, Date fecha_entrada, Dat
     this->num_guests = num_guests;
 
     this->room = new Room();
-    if (this->num_guests = 1){
+    if (this->num_guests == 1){
         this->room->setTipo(INDIVIDUAL);
         this->room->setPrecioNoche(50);    
-    }else if( this->num_guests = 2){
+    }else if( this->num_guests == 2){
         this->room->setTipo(DOBLE);
         this->room->setPrecioNoche(100);
     }else if( this->num_guests > 2 && this->num_guests <= 4){
@@ -38,6 +38,21 @@ Reservation::Reservation(Guest **guests, int num_guests, Date fecha_entrada, Dat
     this->guests = guests;
     this->fecha_entrada = fecha_entrada;
     this->fecha_salida = fecha_salida;
+};
+
+Reservation::Reservation(const Reservation &reserva){
+    this->numero_reserva = reserva.numero_reserva;
+    this->num_guests = reserva.num_guests;
+
+    this->room = new Room(*reserva.room);
+    
+    this->guests = new Guest*[num_guests];
+    for (int i = 0; i < this->num_guests; i++){
+        this->guests[i] = new Guest(*reserva.guests[i]);
+    }
+    
+    this->fecha_entrada = reserva.fecha_entrada;
+    this->fecha_salida = reserva.fecha_salida;
 };
 
 int Reservation::getNumeroReserva(){
@@ -79,10 +94,13 @@ void Reservation::setFechaSalida(Date fecha_salida){
 };
 
 // HACER PRIMERO QUE FUNCIONE LA CLASE GUEST STAFF Y ROOM ANTES DE CONTINUAR
-bool Reservation::addGuests(Guest *guests){};
-bool Reservation::removeGuests(Guest *guests){};
+bool Reservation::addGuests(Guest *guests){return true;};
+bool Reservation::removeGuests(Guest *guests){return true;};
 
 Reservation::~Reservation(){
-    delete[] room;
+    delete room;
+    for (int i = 0; i < this->num_guests; i++){
+        delete guests[i];
+    }
     delete[] guests;
 };

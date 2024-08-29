@@ -11,6 +11,7 @@ class Room{
     public:
         Room();
         Room(int num_room, RoomType tipo, double precio_noche);
+        Room(const Room &room);
 
         int getNumRoom();
         RoomType getTipo();

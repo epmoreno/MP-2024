@@ -12,6 +12,12 @@ Room::Room(int num_room, RoomType tipo, double precio_noche){
     this->precio_noche = precio_noche;
 };
 
+Room::Room(const Room &room){
+    this->num_room = room.num_room;
+    this->tipo = room.tipo;
+    this->precio_noche = room.precio_noche;
+};
+
 int Room::getNumRoom(){
     return this->num_room;
 };

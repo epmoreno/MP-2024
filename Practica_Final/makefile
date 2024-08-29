@@ -17,4 +17,4 @@ build/main.o: src/main.cpp $(DEPS)
 .PHONY: clean
 
 clean:
-	rm -f build/*.o $(EXEC)
+	rm build/*.o $(EXEC)

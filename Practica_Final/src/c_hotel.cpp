@@ -68,14 +68,14 @@ void Hotel::setNumRooms(int num_rooms){
 };
 
 // HACER PRIMERO SUS CLASES CORRESPONDIENTES ANTES DE CONTINUAR.
-bool Hotel::addStaff(Staff *new_miembro){};
-bool Hotel::addRoom(Room *new_room){};
+bool Hotel::addStaff(Staff *new_miembro){return true;};
+bool Hotel::addRoom(Room *new_room){return true;};
 
-bool Hotel::removeStaffMember(Staff *miembro_a_eliminar){};
-bool Hotel::removeRoom(Room *room_a_eliminar){};
+bool Hotel::removeStaffMember(Staff *miembro_a_eliminar){return true;};
+bool Hotel::removeRoom(Room *room_a_eliminar){return true;};
 
-bool Hotel::addReserva(Reservation *reserva){};
-bool Hotel::removeReserva(Reservation *reserva){};
+bool Hotel::addReserva(Reservation *reserva){return true;};
+bool Hotel::removeReserva(Reservation *reserva){return true;};
 
 Hotel::~Hotel(){
     delete[] staff_miembros;

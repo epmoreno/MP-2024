@@ -16,6 +16,7 @@ class Reservation{
     public:
         Reservation();
         Reservation(Guest **guests, int num_guests, Date fecha_entrada, Date fecha_salida);
+        Reservation(const Reservation &reserva);
         ~Reservation();
         
         int getNumeroReserva();
